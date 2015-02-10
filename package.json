@@ -1,0 +1,6 @@
+{
+    "name": "Name-Generator",
+    "version": "0.5",
+    "description": "A simple name generator site to generate Github repo names",
+    "author": "Connor Findlay <connor.findlay@ecs.vuw.ac.nz>"
+}
