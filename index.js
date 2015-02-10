@@ -24,7 +24,7 @@ app.post('/process-param', function(req,res) {
     generator.generate({num : len, separator : sep},function(err, words){
         randomWords = words;
     });
-    console.log('randomWords is: %s', randomWords);
+    console.log('%s', randomWords);
     res.send(randomWords);
 });
 
