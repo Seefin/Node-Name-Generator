@@ -20,14 +20,24 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post('/process-param', function(req,res) {
     var len = req.body.length;
     var sep = req.body.seperator;
-    var randomWords;
-    generator.generate({num : len, separator : sep},function(err, words){
-        randomWords = words;
-    });
-    console.log('%s', randomWords);
-    res.send(randomWords);
+    var sug = req.body.suggestions;
+    var randomWords = [];
+    for (var i = 0; i < sug; i++) {
+        generator.generate({num : len, separator : sep},function(err, words){
+            randomWords.push(words);
+        });
+    }
+    console.log('%s', formatConsoleResponse(randomWords));
+    res.send(formatHtmlResponse(randomWords));
 });
 
+function formatHtmlResponse(words) {
+    return words.join('<br />');
+}
+
+function formatConsoleResponse(words) {
+    return words.join('\n');
+}
 
 //Globals for listening server
 var host;
