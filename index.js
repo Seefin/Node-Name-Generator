@@ -1,6 +1,6 @@
 //Application Stack
 var express = require('express');
-var WordGenerator = require('wordgenerator');
+var WordGenerator = require('./wordgenerator.js');
 var bodyParser = require('body-parser');
 //Variables
 var app = express();

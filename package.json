@@ -17,8 +17,8 @@
         "Names"
     ],
     "dependencies": {
+        "fibers":"x",
         "express":"4.11.x",
-        "wordgenerator":"~0.0.1",
         "body-parser":"1.11.x",
         "jade":"1.9.x"
     }
